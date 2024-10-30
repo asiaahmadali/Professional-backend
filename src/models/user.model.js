@@ -69,7 +69,7 @@ return await bcrypt.compare(password,this.password) ;    // it will compare stri
 }
 
 userSchema.methods.generateAccessToken=async function(){
-  // generating access token
+  // generating access tokens
  return  await jwt.sign({    //payload
     _id:this._id,
     email:this.email,
