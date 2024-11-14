@@ -13,7 +13,7 @@ const app = express() ;
 connectDB()
 .then(()=>{
   app.listen(process.env.PORT || 8000,()=>{
-    console.log(`server is runnig at port : ${process.env.PORT}`); 
+    console.log(`server running at port no: ${process.env.PORT}`); 
   })
   app.on((error)=>{
     console.log(error);
