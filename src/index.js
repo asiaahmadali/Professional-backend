@@ -11,18 +11,25 @@ import connectDB from "./db/index.js";
 const app = express() ;
 
 connectDB()
-.then(()=>{
-  app.listen(process.env.PORT || 8000,()=>{
-    console.log(`server running at port no: ${process.env.PORT}`); 
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`Server running at port: ${process.env.PORT || 8000}`);
+    });
   })
-  app.on((error)=>{
-    console.log(error);
-    throw error ;
-  })
-})
-.catch((error)=>{
-  console.log("mongodb connection failed !!!",error);
-}) ;
+  .catch((error) => {
+    console.log("MongoDB connection failed!!!", error);
+  });
+
+// Error handling middleware (optional, for catching unhandled errors)
+app.use((req, res, next) => {
+  res.status(404).send("Not Found error occurs");
+});
+
+// General error handler for unexpected errors
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
 
 // const app = express() ;
 // ;(async()=>{
