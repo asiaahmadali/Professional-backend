@@ -1,23 +1,40 @@
-import mongoose from "mongoose";
-import express from "express";
-import { DB_NAME } from "./contants";
+// import express from 'express' ;
+// const app  = express() ;
 
-const app = express() ;
+// function logger(err,req, res, next){
+//    console.log(`${req.method} requests for ${req.url}`);
+//    next() ;
+// }
 
-// ;(async()=>{
-//      try {
-//           await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`) ;
-//           app.listen(process.env.PORT , (error)=>{
-//             console.log(`server is listening at ${process.env.PORT}`);
-          
-//           });
-//           app.on('error',(error)=>{
-//             console.log(error);
-//             throw error ;
-            
-//           })
-//      } catch (error) {
-//          console.log(error) ;
-//          throw error ;
-//      }
-// })()
+
+// app.use(logger) ;;
+
+// app.use('/',logger()) ;
+
+// app.use('/about',(err,req,res,next)=>{
+//   res.send('inside about middleware') ;
+//   next() ;
+// },(err,req,res)=>{
+//     res.send('nested middleware')
+// });
+
+// app.use((err,req,res,next)=>{
+//     err.status(404).send('not found error occurs') ;
+// })
+// app.use((err,req,res,next)=>{
+//     err.status(500).send('somethig went wrong')
+// })
+
+
+
+
+
+ // ----------------jwt-------------
+
+ 
+
+
+
+
+
+
