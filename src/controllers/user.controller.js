@@ -18,7 +18,8 @@ const registerUser = asyncHandler(async(req,res)=>{
    const{username,fullName,email,password} = req.body ;
    console.log(email);
 
-   // user info validation
+   // user info validation 
+   // jwt authentication
    
 })
 
